@@ -23,6 +23,6 @@ class User < ApplicationRecord
   end
 
   # <<アソシエーション>>
-  has_many :items
-  has_many :item_transaction
+  # has_many :items
+  # has_many :item_transaction
 end
