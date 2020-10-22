@@ -43,3 +43,4 @@ app/views/devise/registrations/.DS_Store
 # images
 app/assets/images
 
+spec/fixtures
