@@ -22,15 +22,12 @@
         (税込) 送料込み
       </span>
     </div>
-    <%# ログイン済　かつ　購入情報がない場合 %>
     <% if user_signed_in? && @item.item_transaction == nil%>
-    <%# ①ログインしているユーザーが出品者の場合 %>
       <% if current_user.id == @item.user_id %>
         <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
         <p class='or-text'>or</p>
         <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
       <% else %>
-      <%# ②ログインしているユーザーが出品者ではない場合 %>
         <%= link_to '購入画面に進む', item_transactions_path(item_id: @item.id) ,class:"item-red-btn"%>
       <% end %>
     <% end %>
